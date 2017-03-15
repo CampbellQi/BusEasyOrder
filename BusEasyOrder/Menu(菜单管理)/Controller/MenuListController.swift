@@ -65,7 +65,7 @@ class MenuListController: BaseViewController, UITableViewDataSource, UITableView
             
         }
         
-        //松开时
+        //松手时
         if recognizer.state == UIGestureRecognizerState.ended {
             if Int(typeTableView.frame.minX) >= -Int(typeTableView.bounds.width) / 2  {
                 //展出
