@@ -10,12 +10,22 @@ import UIKit
 
 class LoginController: BaseViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
+    override func setUpView() {
+        logoImageView.layer.masksToBounds = true
+        logoImageView.layer.cornerRadius = logoImageView.bounds.size.width * 0.5
+    }
+    @IBAction func loginClicked(_ sender: Any) {
+        let appdelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.showMenuSB()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

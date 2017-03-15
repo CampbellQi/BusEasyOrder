@@ -16,9 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let window: UIWindow = UIWindow.init(frame: UIScreen.main.bounds)
+        window.backgroundColor = UIColor.white
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        showLoginSB()
         return true
     }
 
+    func showLoginSB() {
+        let loginSB: UIStoryboard = UIStoryboard.init(name: "Login", bundle: Bundle.main)
+        let loginVC = loginSB.instantiateInitialViewController()
+        self.window?.rootViewController = loginVC
+    }
+    
+    func showMenuSB() {
+        let menuSB: UIStoryboard = UIStoryboard.init(name: "Menu", bundle: Bundle.main)
+        let menuVC = menuSB.instantiateInitialViewController()
+        self.window?.rootViewController = menuVC
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
